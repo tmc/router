@@ -184,7 +184,11 @@ http {
 			return 200;
 		}
 		location / {
+			{{ if $routerConfig.Return200AtRoot }}
+			return 200;
+			{{ else }}
 			return 404;
+			{{ end }}
 		}
 	}
 	{{ end }}
@@ -211,7 +215,11 @@ http {
 		      	deny all;
 		}
 		location / {
+			{{ if $routerConfig.Return200AtRoot }}
+			return 200;
+			{{ else }}
 			return 404;
+			{{ end }}
 		}
 	}
 

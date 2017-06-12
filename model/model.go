@@ -57,6 +57,7 @@ type RouterConfig struct {
 	DefaultServiceIP         string      `key:"defaultServiceIP"`
 	DefaultAppName           string      `key:"defaultAppName"`
 	DefaultServiceEnabled    bool        `key:"defaultServiceEnabled" constraint:"(?i)^(true|false)$"`
+	Return200AtRoot          bool        `key:"return200AtRoot" constraint:"(?i)^(true|false)$"`
 	RequestIDs               bool        `key:"requestIDs" constraint:"(?i)^(true|false)$"`
 	SSLConfig                *SSLConfig  `key:"ssl"`
 	AppConfigs               []*AppConfig
