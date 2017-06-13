@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: ['-c', 'apt-get install -y make; make -d bootstrap; make -d build; DEIS_REGISTRY=gcr.io/ IMAGE_PREFIX=$PROJECT_ID make -d docker-build docker-push']
+
+images:
+    - 'gcr.io/$PROJECT_ID/router:canary'
